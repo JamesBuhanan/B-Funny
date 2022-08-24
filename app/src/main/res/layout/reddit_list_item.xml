@@ -5,12 +5,18 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <ImageView
+
+    <data>
+        <variable
+            name="redditPost"
+            type="com.example.b_funny.model.RedditPost" />
+    </data>
+
+    <TextView
         android:id="@+id/info"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
         android:padding="2dp"
-        tools:src="@tools:sample/backgrounds/scenic"/>
+        android:text="@string/hello_first_fragment"
+        />
 </layout>

@@ -17,7 +17,10 @@
 
 package com.example.b_funny.overview
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.b_funny.model.RedditPost
 
 //
 //import androidx.lifecycle.LiveData
@@ -28,14 +31,15 @@ import androidx.lifecycle.ViewModel
 // * The [ViewModel] that is attached to the [OverviewFragment].
 // */
 class OverviewViewModel : ViewModel() {
-//
+    //
 //    // The internal MutableLiveData String that stores the status of the most recent request
-//    private val _response = MutableLiveData<String>()
-//
-//    // The external immutable LiveData for the request status String
-//    val response: LiveData<String>
-//        get() = _response
-//
+    private val _response = MutableLiveData<List<RedditPost>>()
+
+    // The external immutable LiveData for the request status String
+    val response: LiveData<List<RedditPost>>
+        get() = _response
+
+    //
 //    /**
 //     * Call getMarsRealEstateProperties() on init so we can display status immediately.
 //     */
@@ -46,7 +50,7 @@ class OverviewViewModel : ViewModel() {
 //    /**
 //     * Sets the value of the status LiveData to the Mars API status.
 //     */
-//    private fun getMarsRealEstateProperties() {
-//        _response.value = "Set the Mars API Response here!"
+    fun setRedditPosts(redditPosts: List<RedditPost>) {
+        _response.value = redditPosts
     }
-//}
+}
