@@ -20,7 +20,12 @@ package com.example.b_funny.overview
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.b_funny.api.redditposts.RedditPostsAPIClient
+import com.example.b_funny.api.redditposts.RedditPostsResponse
 import com.example.b_funny.model.RedditPost
+import com.example.b_funny.model.toRedditPosts
+import kotlinx.coroutines.launch
 
 //
 //import androidx.lifecycle.LiveData
@@ -38,6 +43,14 @@ class OverviewViewModel : ViewModel() {
     // The external immutable LiveData for the request status String
     val response: LiveData<List<RedditPost>>
         get() = _response
+
+    init {
+        viewModelScope.launch {
+            val redditPostsResponse: RedditPostsResponse = RedditPostsAPIClient().getNews("0", "25")
+            val redditPosts = redditPostsResponse.toRedditPosts()
+            _response.value = redditPosts
+        }
+    }
 
     //
 //    /**

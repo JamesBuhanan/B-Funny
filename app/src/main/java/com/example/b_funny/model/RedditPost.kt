@@ -3,16 +3,16 @@ package com.example.b_funny.model
 
 import java.io.Serializable
 
-class RedditPost : Serializable {
-    var title: String? = null
-    var url: String? = null
-    var domain: String? = null
-    var author: String? = null
-    var subreddit: String? = null
-    var selftext_html: String? = null
-    var permalink: String? = null
-    var thumbnail: String? = null
-    var score: Int = 0
-    var comments: Int = 0
-    var time: Long = 0
-}
+data class RedditPost(
+    val title: String? = null,
+    val url: String? = null,
+    val domain: String? = null,
+    val author: String? = null,
+    val subreddit: String? = null,
+    val selftext_html: String? = null,
+    val permalink: String? = null,
+    val thumbnail: String? = null,
+    val score: Int = 0,
+    val comments: Int = 0,
+    val time: Long = 0,
+) : Serializable

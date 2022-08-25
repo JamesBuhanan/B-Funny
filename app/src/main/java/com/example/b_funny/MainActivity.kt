@@ -25,10 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        lifecycleScope.launch {
-            val result = RedditPostsAPIClient().getNews("0", "25")
-            val test = result
-        }
+
 
         setSupportActionBar(binding.toolbar)
 

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.b_funny.databinding.FragmentOverviewBinding
-import com.example.b_funny.model.RedditPost
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -27,7 +26,6 @@ class OverviewFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.postList.adapter = OverviewAdapter()
-        viewModel.setRedditPosts(listOf(RedditPost(), RedditPost()))
 
         return binding.root
     }
