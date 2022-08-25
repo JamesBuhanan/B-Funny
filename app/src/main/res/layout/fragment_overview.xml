@@ -13,7 +13,8 @@
         android:id="@+id/post_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:gravity="center"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:listData="@{viewModel.response}" />
 
 </layout>
