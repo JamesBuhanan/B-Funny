@@ -21,7 +21,7 @@ data class ChildrenData(
     val selftext_html: String?,
     val score: Int,
     val domain: String,
-    val preview: Preview,
+    val preview: Preview?,
     val permalink: String
 )
 
