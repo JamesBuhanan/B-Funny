@@ -15,7 +15,7 @@
  *
  */
 
-package com.example.b_funny.overview
+package com.example.b_funny.redditlist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -35,7 +35,7 @@ import kotlinx.coroutines.launch
 ///**
 // * The [ViewModel] that is attached to the [OverviewFragment].
 // */
-class OverviewViewModel : ViewModel() {
+class RedditListViewModel : ViewModel() {
     //
 //    // The internal MutableLiveData String that stores the status of the most recent request
     private val _response = MutableLiveData<List<RedditPost>>()

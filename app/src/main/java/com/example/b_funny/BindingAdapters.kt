@@ -22,9 +22,8 @@ import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.b_funny.model.RedditPost
-import com.example.b_funny.overview.OverviewAdapter
+import com.example.b_funny.redditlist.OverviewAdapter
 
 /**
  * When there is no Mars property data (data is null), hide the [RecyclerView], otherwise show it.
