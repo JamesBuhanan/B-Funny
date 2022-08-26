@@ -2,7 +2,10 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
+
 apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
+
 android {
     namespace 'com.example.b_funny'
     compileSdk 32

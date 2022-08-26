@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.b_funny.databinding.FragmentRedditListBinding
+import com.example.b_funny.model.RedditPost
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -25,7 +27,13 @@ class RedditListFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        binding.postList.adapter = OverviewAdapter()
+        val onClickListener: (RedditPost) -> Unit = {
+            // navigate to detail fragment with this RedditPost
+            findNavController().navigate(RedditListFragmentDirections.actionRedditListFragmentToDetailFragment(it))
+        }
+
+        binding.postList.adapter = OverviewAdapter(onClickListener)
+
 
         return binding.root
     }

@@ -12,11 +12,16 @@
         tools:layout="@layout/fragment_reddit_list">
         <action
             android:id="@+id/action_RedditListFragment_to_DetailFragment"
-            app:destination="@id/DetailFragment" />
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/DetailFragment"
-        android:name="com.example.b_funny.detail.SecondFragment"
+        android:id="@+id/detailFragment"
+        android:name="com.example.b_funny.detail.DetailFragment"
         android:label="@string/detail_fragment_label"
-        tools:layout="@layout/fragment_detail"/>
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="selectedRedditPost"
+            app:argType="com.example.b_funny.model.RedditPost" />
+    </fragment>
+
 </navigation>
