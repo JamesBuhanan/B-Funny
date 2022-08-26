@@ -1,4 +1,4 @@
-package com.example.b_funny.overview
+package com.example.b_funny.redditlist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.b_funny.databinding.FragmentOverviewBinding
+import com.example.b_funny.databinding.FragmentRedditListBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class OverviewFragment : Fragment() {
-    private val viewModel: OverviewViewModel by lazy {
-        ViewModelProvider(this).get(OverviewViewModel::class.java)
+class RedditListFragment : Fragment() {
+    private val viewModel: RedditListViewModel by lazy {
+        ViewModelProvider(this).get(RedditListViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -21,7 +21,7 @@ class OverviewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val binding = FragmentOverviewBinding.inflate(inflater, container, false)
+        val binding = FragmentRedditListBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 

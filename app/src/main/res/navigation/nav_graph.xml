@@ -3,26 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/OverviewFragment">
+    app:startDestination="@id/RedditListFragment">
 
     <fragment
-        android:id="@+id/OverviewFragment"
-        android:name="com.example.b_funny.overview.OverviewFragment"
+        android:id="@+id/RedditListFragment"
+        android:name="com.example.b_funny.redditlist.RedditListFragment"
         android:label="@string/overview_fragment_label"
-        tools:layout="@layout/fragment_overview">
-
+        tools:layout="@layout/fragment_reddit_list">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_RedditListFragment_to_DetailFragment"
+            app:destination="@id/DetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/DetailFragment"
         android:name="com.example.b_funny.detail.SecondFragment"
         android:label="@string/detail_fragment_label"
-        tools:layout="@layout/fragment_detail">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/OverviewFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_detail"/>
 </navigation>
