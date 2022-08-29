@@ -5,7 +5,7 @@ data class RedditPostsResponse(val data: RedditPostsResponseData)
 
 data class RedditPostsResponseData(
     val children: List<Children>,
-    val after: String?
+    val after: String
 )
 
 data class Children(val data: ChildrenData)

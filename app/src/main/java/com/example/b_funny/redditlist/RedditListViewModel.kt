@@ -25,6 +25,7 @@ import com.example.b_funny.api.redditposts.RedditPostsAPIClient
 import com.example.b_funny.api.redditposts.RedditPostsResponse
 import com.example.b_funny.model.RedditPost
 import com.example.b_funny.model.toRedditPosts
+import com.example.b_funny.utils.ContentType
 import kotlinx.coroutines.launch
 
 //
@@ -44,11 +45,26 @@ class RedditListViewModel : ViewModel() {
     val response: LiveData<List<RedditPost>>
         get() = _response
 
+    var after = "0"
+
     init {
+        getMore()
+    }
+
+    fun getMore() {
         viewModelScope.launch {
-            val redditPostsResponse: RedditPostsResponse = RedditPostsAPIClient().getNews("0", "25")
-            val redditPosts = redditPostsResponse.toRedditPosts()
-            _response.value = redditPosts
+            val redditPostsResponse: RedditPostsResponse =
+                RedditPostsAPIClient().getNews(after, "25")
+            after = redditPostsResponse.data.after
+            val redditPosts = redditPostsResponse.toRedditPosts().filter { redditPost ->
+                redditPost.url != null &&
+                        ContentType.getContentType(redditPost.url) == ContentType.Type.IMAGE
+            }
+            val newPosts = when (val existingPosts = _response.value) {
+                null -> redditPosts
+                else -> existingPosts + redditPosts
+            }
+            _response.value = newPosts
         }
     }
 

@@ -3,7 +3,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="redditPost"
             type="com.example.b_funny.model.RedditPost" />
@@ -14,13 +16,36 @@
         android:layout_height="match_parent"
         tools:context=".detail.DetailFragment">
 
-        <TextView
-            android:id="@+id/textview_detail"
-            android:layout_width="wrap_content"
+        <ImageView
+            imageUrl="@{redditPost.url}"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:src="@tools:sample/backgrounds/scenic"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="68dp"
+            android:layout_height="87dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="24dp"
+            android:src="@android:drawable/ic_menu_upload"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="68dp"
+            android:layout_height="87dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
+            android:src="@android:drawable/ic_menu_share"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

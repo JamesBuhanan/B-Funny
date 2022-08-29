@@ -33,9 +33,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
 
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

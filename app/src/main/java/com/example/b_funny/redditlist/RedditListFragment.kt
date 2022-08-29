@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.b_funny.databinding.FragmentRedditListBinding
 import com.example.b_funny.model.RedditPost
 
@@ -22,17 +23,29 @@ class RedditListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         val binding = FragmentRedditListBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         val onClickListener: (RedditPost) -> Unit = {
             // navigate to detail fragment with this RedditPost
-            findNavController().navigate(RedditListFragmentDirections.actionRedditListFragmentToDetailFragment(it))
+            findNavController().navigate(
+                RedditListFragmentDirections.actionRedditListFragmentToDetailFragment(
+                    it
+                )
+            )
         }
 
         binding.postList.adapter = OverviewAdapter(onClickListener)
+        binding.postList.setOnScrollChangeListener { _, _, _, _, _ ->
+            val lastGridItemPosition =
+                (binding.postList.layoutManager as GridLayoutManager).findLastVisibleItemPosition()
+
+            val lastViewModelPosition = (viewModel.response.value?.size ?: 0) - 1
+            if (lastGridItemPosition >= lastViewModelPosition) {
+                viewModel.getMore()
+            }
+        }
 
 
         return binding.root
