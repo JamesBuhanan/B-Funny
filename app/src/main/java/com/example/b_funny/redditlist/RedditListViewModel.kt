@@ -46,12 +46,14 @@ class RedditListViewModel : ViewModel() {
         get() = _response
 
     var after = "0"
+    var loading = false
 
     init {
         getMore()
     }
 
     fun getMore() {
+        loading = true
         viewModelScope.launch {
             val redditPostsResponse: RedditPostsResponse =
                 RedditPostsAPIClient().getNews(after, "25")
@@ -65,21 +67,7 @@ class RedditListViewModel : ViewModel() {
                 else -> existingPosts + redditPosts
             }
             _response.value = newPosts
+            loading = false
         }
-    }
-
-    //
-//    /**
-//     * Call getMarsRealEstateProperties() on init so we can display status immediately.
-//     */
-//    init {
-//        getMarsRealEstateProperties()
-//    }
-//
-//    /**
-//     * Sets the value of the status LiveData to the Mars API status.
-//     */
-    fun setRedditPosts(redditPosts: List<RedditPost>) {
-        _response.value = redditPosts
     }
 }

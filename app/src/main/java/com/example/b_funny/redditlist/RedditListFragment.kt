@@ -43,7 +43,9 @@ class RedditListFragment : Fragment() {
 
             val lastViewModelPosition = (viewModel.response.value?.size ?: 0) - 1
             if (lastGridItemPosition >= lastViewModelPosition) {
-                viewModel.getMore()
+                if (!viewModel.loading) {
+                    viewModel.getMore()
+                }
             }
         }
 
