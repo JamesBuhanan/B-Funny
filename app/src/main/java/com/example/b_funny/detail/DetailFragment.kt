@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
 import com.example.b_funny.R
@@ -26,7 +27,6 @@ class DetailFragment : Fragment() {
         binding.btnShare.setOnClickListener {
             share(redditPost.url!!)
         }
-
         return binding.root
     }
 
