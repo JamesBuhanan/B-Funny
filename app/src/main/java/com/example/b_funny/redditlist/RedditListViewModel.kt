@@ -21,31 +21,21 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.b_funny.api.redditposts.RedditPostsAPIClient
-import com.example.b_funny.api.redditposts.RedditPostsResponse
+import com.example.b_funny.api.redditposts.RedditPostsClient
+import com.example.b_funny.api.redditposts.RedditPostsRepository
 import com.example.b_funny.model.RedditPost
-import com.example.b_funny.model.toRedditPosts
-import com.example.b_funny.utils.ContentType
 import kotlinx.coroutines.launch
 
-//
-//import androidx.lifecycle.LiveData
-//import androidx.lifecycle.MutableLiveData
-//import androidx.lifecycle.ViewModel
-//
-///**
-// * The [ViewModel] that is attached to the [OverviewFragment].
-// */
+
 class RedditListViewModel : ViewModel() {
-    //
-//    // The internal MutableLiveData String that stores the status of the most recent request
+
     private val _response = MutableLiveData<List<RedditPost>>()
 
-    // The external immutable LiveData for the request status String
     val response: LiveData<List<RedditPost>>
         get() = _response
 
-    var after = "0"
+    private val repository = RedditPostsRepository(RedditPostsClient())
+
     var loading = false
 
     init {
@@ -55,19 +45,18 @@ class RedditListViewModel : ViewModel() {
     fun getMore() {
         loading = true
         viewModelScope.launch {
-            val redditPostsResponse: RedditPostsResponse =
-                RedditPostsAPIClient().getNews(after, "25")
-            after = redditPostsResponse.data.after
-            val redditPosts = redditPostsResponse.toRedditPosts().filter { redditPost ->
-                redditPost.url != null &&
-                        ContentType.getContentType(redditPost.url) == ContentType.Type.IMAGE
-            }
-            val newPosts = when (val existingPosts = _response.value) {
-                null -> redditPosts
-                else -> existingPosts + redditPosts
-            }
-            _response.value = newPosts
-            loading = false
+            val result: Result<List<RedditPost>> = repository.getMore()
+
+            result.fold(
+                onSuccess = { allPosts ->
+                    _response.value = allPosts.toList()
+                    loading = false
+                },
+                onFailure = {
+                    // Show toast?
+                    loading = false
+                }
+            )
         }
     }
 }
