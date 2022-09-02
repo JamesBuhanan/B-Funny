@@ -12,6 +12,7 @@
             type="com.example.b_funny.model.RedditPost" />
     </data>
 
+    <!-- MaterialCardView had issues being the first child (no elevation), so I nested it in a LinearLayout per stack overflow advice. -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

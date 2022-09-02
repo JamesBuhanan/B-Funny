@@ -20,7 +20,7 @@ class RedditPostsClient() {
         redditApi = retrofit.create(RedditPostsService::class.java)
     }
 
-    suspend fun getTop(after: String, limit: String): RedditPostsResponse {
-        return redditApi.getTop(after, limit)
+    suspend fun getTop(subreddit: String, after: String, limit: String): RedditPostsResponse {
+        return redditApi.getTop(subreddit, after, limit)
     }
 }
