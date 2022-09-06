@@ -5,4 +5,7 @@
     <string name="sharing">Here is the link! %s </string>
     <string name="b_funny">B-Funny</string>
     <string name="reddit_list_fragment_label">B-Funny</string>
+    <string name="subreddit_all">All</string>
+    <string name="subreddit_wholesomememes">WholesomeMemes</string>
+    <string name="subreddit_funny">Funny</string>
 </resources>

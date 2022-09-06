@@ -1,5 +1,3 @@
-
-
 package com.example.b_funny.redditlist
 
 import androidx.lifecycle.LiveData
@@ -14,21 +12,15 @@ import kotlinx.coroutines.launch
 
 
 class RedditListViewModel : ViewModel() {
-
     private val _response = MutableLiveData<List<RedditPost>>()
-
     val response: LiveData<List<RedditPost>>
         get() = _response
 
     val showToast = SingleLiveEvent<String>()
 
-    private val repository = RedditPostsRepository(RedditPostsClient())
+    private lateinit var repository: RedditPostsRepository
 
     var loading = false
-
-    init {
-        getMore()
-    }
 
     fun getMore() {
         loading = true
@@ -46,5 +38,15 @@ class RedditListViewModel : ViewModel() {
                 }
             )
         }
+    }
+
+    private var subreddit: String? = null
+    fun changeSubreddit(subreddit: String) {
+        if (this.subreddit == subreddit) {
+            return
+        }
+        this.subreddit = subreddit
+        this.repository = RedditPostsRepository(RedditPostsClient(subreddit))
+        getMore()
     }
 }

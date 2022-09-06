@@ -5,7 +5,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-class RedditPostsClient() {
+class RedditPostsClient(private val subreddit: String) {
 
     private val redditApi: RedditPostsService
 
@@ -20,7 +20,7 @@ class RedditPostsClient() {
         redditApi = retrofit.create(RedditPostsService::class.java)
     }
 
-    suspend fun getTop(subreddit: String, after: String, limit: String): RedditPostsResponse {
+    suspend fun getTop(after: String, limit: String): RedditPostsResponse {
         return redditApi.getTop(subreddit, after, limit)
     }
 }

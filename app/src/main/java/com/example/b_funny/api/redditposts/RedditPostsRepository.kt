@@ -12,7 +12,7 @@ class RedditPostsRepository(
 
     suspend fun getMore(): Result<List<RedditPost>> {
         return try {
-            val redditPostsResponse = redditPostsClient.getTop("all", after, "25")
+            val redditPostsResponse = redditPostsClient.getTop(after, "25")
             after = redditPostsResponse.data.after
 
             val redditPosts = redditPostsResponse.toRedditPosts().filter { redditPost ->

@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/id_all"
+        android:title="@string/subreddit_all" />
+    <item
+        android:id="@+id/id_wholesomememes"
+        android:title="@string/subreddit_wholesomememes" />
+    <item
+        android:id="@+id/id_funny"
+        android:title="@string/subreddit_funny" />
+</menu>
