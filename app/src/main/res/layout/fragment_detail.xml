@@ -18,7 +18,7 @@
 
         <ImageView
             imageUrl="@{redditPost.url}"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/width_zero"
             android:layout_height="wrap_content"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,8 +29,8 @@
 
         <ImageView
             android:id="@+id/btnShare"
-            android:layout_width="64dp"
-            android:layout_height="88dp"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
             android:layout_marginStart="@dimen/btn_margin"
             android:layout_marginBottom="@dimen/btn_margin"
             android:src="@android:drawable/ic_menu_share"
@@ -39,8 +39,8 @@
 
         <ImageView
             android:id="@+id/btnDownload"
-            android:layout_width="64dp"
-            android:layout_height="88dp"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
             android:layout_marginStart="@dimen/btn_margin"
             android:layout_marginBottom="@dimen/btn_margin"
             android:src="@android:drawable/ic_menu_save"

@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/middle"
-        android:layout_width="156dp"
-        android:layout_height="173dp"
+        android:layout_width="@dimen/center_width"
+        android:layout_height="@dimen/center_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,8 +18,8 @@
 
     <ImageView
         android:id="@+id/b_funny_logo"
-        android:layout_width="157dp"
-        android:layout_height="172dp"
+        android:layout_width="@dimen/logo_width"
+        android:layout_height="@dimen/logo_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,9 +28,9 @@
 
     <TextView
         android:id="@+id/app_name"
-        android:layout_width="236dp"
-        android:layout_height="0dp"
-        android:textSize="64sp"
+        android:layout_width="@dimen/app_name_width"
+        android:layout_height="@dimen/app_name_height"
+        android:textSize="@dimen/logo_text_size"
         android:textColor="@color/colorPrimary"
         android:text="@string/b_funny"
         app:layout_constraintBottom_toTopOf="@+id/middle"

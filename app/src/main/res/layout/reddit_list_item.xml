@@ -21,13 +21,13 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginBottom="16dp"
-            android:padding="24dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            android:layout_margin="@dimen/card_margin"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:padding="@dimen/card_padding"
+            app:cardCornerRadius="@dimen/card_margin"
+            app:cardElevation="@dimen/card_margin"
             app:strokeColor="@android:color/darker_gray"
-            app:strokeWidth="1dp">
+            app:strokeWidth="@dimen/card_border">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/info"
@@ -37,8 +37,8 @@
                 <ImageView
                     android:id="@+id/thumbnail"
                     imageUrl="@{redditPost.thumbnail}"
-                    android:layout_width="0dp"
-                    android:layout_height="128dp"
+                    android:layout_width="@dimen/width_zero"
+                    android:layout_height="@dimen/thumbnail_height"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toTopOf="@id/title"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
                     android:gravity="center"
                     android:text="@{redditPost.title}"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/title_text_size"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
