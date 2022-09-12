@@ -1,7 +1,9 @@
 package com.example.b_funny.redditlist
 
 import android.content.Context.MODE_PRIVATE
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableString
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment

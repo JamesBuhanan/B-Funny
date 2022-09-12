@@ -13,9 +13,7 @@
 //
 //import java.util.ArrayList;
 //
-//import johnbuhanan.com.lurkit.activities.DetailsActivity;
 //import com.example.b_funny.model.Comment;
-//import johnbuhanan.com.lurkit.network.VolleySingleton;
 //
 //public class CommentsManager {
 //

@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/middle"
+        android:alpha="0"
         android:layout_width="@dimen/center_width"
         android:layout_height="@dimen/center_height"
         app:layout_constraintBottom_toBottomOf="parent"

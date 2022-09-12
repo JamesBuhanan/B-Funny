@@ -1,8 +1,6 @@
 package com.example.b_funny.splash
 
-/**
- * Created by john on 3/17/18.
- */
+
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -21,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         lifecycleScope.launch {
-            delay(3000)
+            delay(2000)
             startActivity(Intent(applicationContext, MainActivity::class.java))
             finish()
         }
