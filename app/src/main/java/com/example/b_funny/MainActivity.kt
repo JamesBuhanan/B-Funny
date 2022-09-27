@@ -31,12 +31,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-        registerReceiver(onComplete, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
-    }
-
-    private val onComplete = object : BroadcastReceiver() {
-        override fun onReceive(context: Context?, intent: Intent?) {
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
