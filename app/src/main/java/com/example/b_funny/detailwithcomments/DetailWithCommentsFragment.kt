@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.b_funny.databinding.FragmentDetailBinding
+import com.example.b_funny.databinding.FragmentDetailWithCommentsBinding
 
 
 class DetailWithCommentsFragment : Fragment() {
@@ -14,12 +15,11 @@ class DetailWithCommentsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentDetailBinding.inflate(inflater, container, false)
-
+        val binding = FragmentDetailWithCommentsBinding.inflate(inflater, container, false)
+        binding.commentsView.adapter = CommentsAdapter()
         val redditPost =
             DetailWithCommentsFragmentArgs.fromBundle(requireArguments()).selectedRedditPost
         binding.redditPost = redditPost
-
         return binding.root
     }
 
