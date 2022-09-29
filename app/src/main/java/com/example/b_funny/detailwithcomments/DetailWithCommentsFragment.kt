@@ -5,11 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.b_funny.databinding.FragmentDetailBinding
+import androidx.lifecycle.ViewModelProvider
 import com.example.b_funny.databinding.FragmentDetailWithCommentsBinding
 
 
 class DetailWithCommentsFragment : Fragment() {
+    private val viewModel: DetailWithCommentsViewModel by lazy {
+        ViewModelProvider(this)[DetailWithCommentsViewModel::class.java]
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -20,7 +24,9 @@ class DetailWithCommentsFragment : Fragment() {
         val redditPost =
             DetailWithCommentsFragmentArgs.fromBundle(requireArguments()).selectedRedditPost
         binding.redditPost = redditPost
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+        viewModel.getComments(redditPost.permalink.orEmpty())
         return binding.root
     }
-
 }

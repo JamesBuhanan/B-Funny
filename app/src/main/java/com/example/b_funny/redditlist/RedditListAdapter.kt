@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.b_funny.databinding.RedditListItemBinding
 import com.example.b_funny.model.RedditPost
 
-class OverviewAdapter(val onClickListener: (RedditPost) -> Unit) :
+class OverviewAdapter(
+    val onClickListener: (RedditPost) -> Unit,
+    val onClickListener2: (RedditPost) -> Unit
+) :
     ListAdapter<RedditPost, RedditListItemViewHolder>(DiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RedditListItemViewHolder {
         val binding = RedditListItemBinding.inflate(LayoutInflater.from(parent.context))
@@ -17,14 +20,18 @@ class OverviewAdapter(val onClickListener: (RedditPost) -> Unit) :
 
     override fun onBindViewHolder(holder: RedditListItemViewHolder, position: Int) {
         val item = getItem(position)
-        holder.itemView.setOnClickListener {
+        holder.binding.thumbnail.setOnClickListener {
             onClickListener(item)
         }
+        holder.binding.title.setOnClickListener {
+            onClickListener2(item)
+        }
+
         holder.bind(item)
     }
 }
 
-class RedditListItemViewHolder(private val binding: RedditListItemBinding) :
+class RedditListItemViewHolder(val binding: RedditListItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun bind(redditPost: RedditPost) {
         binding.redditPost = redditPost

@@ -6,30 +6,30 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.b_funny.api.redditposts.RedditPostsClient
 import com.example.b_funny.api.redditposts.RedditPostsRepository
-import com.example.b_funny.model.RedditPost
+import com.example.b_funny.model.Comment
 import com.example.b_funny.utils.SingleLiveEvent
 import kotlinx.coroutines.launch
 
 
 class DetailWithCommentsViewModel : ViewModel() {
-    private val _response = MutableLiveData<List<RedditPost>>()
-    val response: LiveData<List<RedditPost>>
+    private val _response = MutableLiveData<List<Comment>>()
+    val response: LiveData<List<Comment>>
         get() = _response
 
     val showToast = SingleLiveEvent<String>()
 
-    private lateinit var repository: RedditPostsRepository
+    private val repository = RedditPostsRepository(RedditPostsClient(""))
 
     var loading = false
 
-    fun getMore() {
+    fun getComments(permalink: String) {
         loading = true
         viewModelScope.launch {
-            val result: Result<List<RedditPost>> = repository.getMore()
+            val result: Result<List<Comment>> = repository.getComments(permalink)
 
             result.fold(
-                onSuccess = { allPosts ->
-                    _response.value = allPosts.toList()
+                onSuccess = { comments ->
+                    _response.value = comments.toList()
                     loading = false
                 },
                 onFailure = {
@@ -38,15 +38,5 @@ class DetailWithCommentsViewModel : ViewModel() {
                 }
             )
         }
-    }
-
-    private var subreddit: String? = null
-    fun changeSubreddit(subreddit: String) {
-        if (this.subreddit == subreddit) {
-            return
-        }
-        this.subreddit = subreddit
-        this.repository = RedditPostsRepository(RedditPostsClient(subreddit))
-        getMore()
     }
 }

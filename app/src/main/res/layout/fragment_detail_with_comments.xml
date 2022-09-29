@@ -9,6 +9,9 @@
         <variable
             name="redditPost"
             type="com.example.b_funny.model.RedditPost" />
+        <variable
+            name="viewModel"
+            type="com.example.b_funny.detailwithcomments.DetailWithCommentsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +39,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/thumbnail" />
+            app:layout_constraintTop_toBottomOf="@+id/thumbnail"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:listData="@{viewModel.response}" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

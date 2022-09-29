@@ -28,9 +28,9 @@ class RedditPostsRepository(
         }
     }
 
-    suspend fun getComments(): Result<List<Comment>> {
+    suspend fun getComments(permalink: String): Result<List<Comment>> {
         return try {
-            val result = redditPostsClient.getComments()
+            val result = redditPostsClient.getComments(permalink)
             Result.success(result)
         } catch (ex: Exception) {
             Result.failure(ex)

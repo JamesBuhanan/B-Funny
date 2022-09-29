@@ -27,9 +27,9 @@ class RedditPostsClient(private val subreddit: String) {
         return redditApi.getTop(subreddit, after, limit)
     }
 
-    suspend fun getComments(): List<Comment> {
+    suspend fun getComments(permalink: String): List<Comment> {
         val redditCommentsResponses: List<Map<String, Any>> =
-            redditApi.getComments("r/Awww/comments/xlbv1g/so_adorable/")
+            redditApi.getComments(permalink)
         // Convert to List of Comments here
         val comments = mutableListOf<Comment>()
         redditCommentsResponses[1].getComments(0, comments)
