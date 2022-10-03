@@ -56,6 +56,7 @@ private fun processRecursively(level: Int, comments: MutableList<Comment>, data:
             level = level,
             commentBody = data["body"] as String?,
             commentScore = scoreInt,
+            commentAuthor = data["author"] as String?
         )
     )
     when (val replies = data["replies"]) {

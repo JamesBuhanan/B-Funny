@@ -62,7 +62,7 @@
                     android:textColor="@color/teal_700"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    tools:text=" • " />
+                    android:text=" • " />
 
                 <TextView
                     android:id="@+id/comment_score"
