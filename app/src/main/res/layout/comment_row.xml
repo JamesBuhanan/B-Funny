@@ -71,7 +71,7 @@
                     android:textColor="#8699b1"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:text="@{comment.commentScore}"
+                    android:text="@{String.valueOf(comment.commentScore)}"
                     tools:text="3000" />
             </LinearLayout>
 

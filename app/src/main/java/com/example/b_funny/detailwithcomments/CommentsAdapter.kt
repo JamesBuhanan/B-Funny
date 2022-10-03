@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.b_funny.databinding.CommentRowBinding
-import com.example.b_funny.databinding.RedditListItemBinding
 import com.example.b_funny.model.Comment
-import com.example.b_funny.model.RedditPost
 
 class CommentsAdapter : ListAdapter<Comment, CommentViewHolder>(DiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentViewHolder {

@@ -28,8 +28,10 @@ class RedditPostsClient(private val subreddit: String) {
     }
 
     suspend fun getComments(permalink: String): List<Comment> {
+        val newPermalink = permalink.removePrefix("/")
         val redditCommentsResponses: List<Map<String, Any>> =
-            redditApi.getComments(permalink)
+            redditApi.getComments(newPermalink)
+        // remove the "/" at the very beg
         // Convert to List of Comments here
         val comments = mutableListOf<Comment>()
         redditCommentsResponses[1].getComments(0, comments)
@@ -47,14 +49,17 @@ private fun Map<String, Any>.getComments(level: Int, comments: MutableList<Comme
 }
 
 private fun processRecursively(level: Int, comments: MutableList<Comment>, data: Map<String, Any>) {
+    val scoreDouble = data["score"] as Double?
+    val scoreInt = scoreDouble?.toInt() ?: 0
     comments.add(
         Comment(
             level = level,
             commentBody = data["body"] as String?,
+            commentScore = scoreInt,
         )
     )
     when (val replies = data["replies"]) {
-        is String -> {}
+        is String, null -> {}
         is Map<*, *> -> {
             (replies as Map<String, Any>).getComments(level + 1, comments)
         }
