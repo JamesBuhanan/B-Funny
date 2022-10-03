@@ -35,5 +35,6 @@ private fun ChildrenData.toRedditPost(): RedditPost {
         url = url,
         thumbnail = thumbnail,
         score = score,
+        permalink = permalink,
     )
 }

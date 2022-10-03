@@ -20,7 +20,7 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<RedditPost>?) {
     val adapter = recyclerView.adapter as OverviewAdapter
     adapter.submitList(data)
 }
-@BindingAdapter("listData")
+@BindingAdapter("listData2")
 fun bindRecyclerView2(recyclerView: RecyclerView, data: List<Comment>?) {
     val adapter = recyclerView.adapter as CommentsAdapter
     adapter.submitList(data)
