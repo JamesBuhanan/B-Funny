@@ -19,18 +19,18 @@
         android:layout_height="match_parent"
         tools:context=".detail.DetailFragment">
 
-<!--        <ImageView-->
-<!--            android:id="@+id/thumbnail"-->
-<!--            imageUrl="@{redditPost.url}"-->
-<!--            android:layout_width="@dimen/width_zero"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            app:layout_constraintBottom_toTopOf="@+id/comments_view"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            tools:src="@tools:sample/backgrounds/scenic"-->
-<!--            android:adjustViewBounds="true"/>-->
+        <ImageView
+            android:id="@+id/thumbnail"
+            imageUrl="@{redditPost.url}"
+            android:layout_width="@dimen/width_zero"
+            android:layout_height="320dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/comments_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic"
+            android:adjustViewBounds="true"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/comments_view"
@@ -40,8 +40,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thumbnail"
             app:listData2="@{viewModel.response}" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

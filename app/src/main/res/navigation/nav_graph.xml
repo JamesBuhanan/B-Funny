@@ -27,8 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailWithCommentsFragment"
-        android:name="com.example.b_funny.detailwithcomments.DetailWithCommentsFragment"
-        android:label="DetailWithCommentsFragment">
+        android:name="com.example.b_funny.detailwithcomments.DetailWithCommentsFragment">
         <argument
             android:name="selectedRedditPost"
             app:argType="com.example.b_funny.model.RedditPost" />
