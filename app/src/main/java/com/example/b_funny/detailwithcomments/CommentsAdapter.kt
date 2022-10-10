@@ -10,17 +10,49 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.b_funny.R
 import com.example.b_funny.databinding.CommentRowBinding
+import com.example.b_funny.databinding.HeaderRowBinding
 import com.example.b_funny.model.Comment
 
-class CommentsAdapter : ListAdapter<Comment, CommentViewHolder>(DiffCallback) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentViewHolder {
-        val binding = CommentRowBinding.inflate(LayoutInflater.from(parent.context))
-        return CommentViewHolder(binding)
+private const val TYPE_HEADER = 0
+private const val TYPE_COMMENT = 1
+
+class CommentsAdapter(private val url: String?) :
+    ListAdapter<Comment, RecyclerView.ViewHolder>(DiffCallback) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return if (viewType == TYPE_COMMENT) {
+            val binding = CommentRowBinding.inflate(LayoutInflater.from(parent.context))
+            CommentViewHolder(binding)
+        } else {
+            val binding = HeaderRowBinding.inflate(LayoutInflater.from(parent.context))
+            HeaderViewHolder(binding)
+        }
     }
 
-    override fun onBindViewHolder(holder: CommentViewHolder, position: Int) {
-        val item = getItem(position)
-        holder.bind(item)
+    override fun getItemViewType(position: Int): Int {
+        return if (position == 0) {
+            TYPE_HEADER
+        } else {
+            TYPE_COMMENT
+        }
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is CommentViewHolder -> {
+                val item = getItem(position)
+                holder.bind(item)
+            }
+            is HeaderViewHolder -> {
+                holder.bind(url)
+            }
+        }
+    }
+}
+
+class HeaderViewHolder(private val binding: HeaderRowBinding) :
+    RecyclerView.ViewHolder(binding.root) {
+    fun bind(url: String?) {
+        binding.url = url
     }
 }
 
@@ -28,9 +60,9 @@ class CommentViewHolder(private val binding: CommentRowBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun bind(comment: Comment) {
         binding.comment = comment
-        binding.commentIndicatorSpace.setPadding(8 * comment.level,0,0,0)
+        binding.commentIndicatorSpace.setPadding(8 * comment.level, 0, 0, 0)
         binding.commentIndicatorColor.background
-        when (comment.level ) {
+        when (comment.level) {
             0 -> binding.commentIndicatorColor.visibility = GONE
             1 -> binding.commentIndicatorColor.setColor(R.color.purple_200)
             2 -> binding.commentIndicatorColor.setColor(R.color.purple_500)

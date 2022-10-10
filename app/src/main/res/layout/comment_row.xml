@@ -49,29 +49,29 @@
                     android:id="@+id/comment_author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{comment.commentAuthor}"
                     android:textColor="#8699b1"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:text="@{comment.commentAuthor}"
                     tools:text="Dum Dum" />
 
                 <TextView
                     android:id="@+id/post_bullet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text=" • "
                     android:textColor="@color/teal_700"
                     android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:text=" • " />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/comment_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(comment.commentScore)}"
                     android:textColor="#8699b1"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:text="@{String.valueOf(comment.commentScore)}"
                     tools:text="3000" />
             </LinearLayout>
 
@@ -83,8 +83,8 @@
                 android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingRight="10dp"
-                android:textSize="16sp"
                 android:text="@{comment.commentBody}"
+                android:textSize="16sp"
                 tools:text="Ronaldo is the best player in the world, lol." />
 
             <View

@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/James/AndroidStudioProjects/BFunny/app/src/main/res/layout/comment_row.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/James/AndroidStudioProjects/BFunny/app/src/main/res/layout/fragment_detail.xml" value="0.2125" />
         <entry key="..\:/Users/James/AndroidStudioProjects/BFunny/app/src/main/res/layout/fragment_detail_with_comments.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/James/AndroidStudioProjects/BFunny/app/src/main/res/layout/header_row.xml" value="0.2125" />
       </map>
     </option>
   </component>

@@ -20,9 +20,9 @@ class DetailWithCommentsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentDetailWithCommentsBinding.inflate(inflater, container, false)
-        binding.commentsView.adapter = CommentsAdapter()
         val redditPost =
             DetailWithCommentsFragmentArgs.fromBundle(requireArguments()).selectedRedditPost
+        binding.commentsView.adapter = CommentsAdapter(redditPost.url)
         binding.redditPost = redditPost
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
