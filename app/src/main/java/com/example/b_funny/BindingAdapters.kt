@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target.SIZE_ORIGINAL
 import com.example.b_funny.detailwithcomments.CommentsAdapter
-import com.example.b_funny.model.CommentListItem.Comment
+import com.example.b_funny.model.Comment
 import com.example.b_funny.model.RedditPost
 import com.example.b_funny.redditlist.OverviewAdapter
 

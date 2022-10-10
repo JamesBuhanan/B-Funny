@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     // Required to make onOptionsItemSelected in Fragments work.
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        super.onOptionsItemSelected(item)
         return false
     }
 }
