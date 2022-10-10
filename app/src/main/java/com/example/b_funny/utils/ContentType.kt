@@ -4,17 +4,7 @@ import java.net.URI
 import java.net.URISyntaxException
 
 object ContentType {
-    /**
-     * Checks if `host` is contains by any of the provided `bases`
-     *
-     *
-     * For example "www.youtube.com" contains "youtube.com" but not "notyoutube.com" or
-     * "youtube.co.uk"
-     *
-     * @param host  A hostname from e.g. [URI.getHost]
-     * @param bases Any number of hostnames to compare against `host`
-     * @return If `host` contains any of `bases`
-     */
+
     fun hostContains(host: String?, vararg bases: String?): Boolean {
         if (host == null || host.isEmpty()) return false
         for (base in bases) {
@@ -110,12 +100,7 @@ object ContentType {
         }
     }
 
-    /**
-     * Attempt to determine the content type of a link from the URL
-     *
-     * @param url URL to get ContentType from
-     * @return ContentType of the URL
-     */
+
     fun getContentType(url: String): Type {
         var url = url
         if (!url.startsWith("//") &&
