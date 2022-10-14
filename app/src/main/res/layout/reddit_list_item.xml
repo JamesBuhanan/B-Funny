@@ -9,7 +9,7 @@
 
         <variable
             name="redditPost"
-            type="com.example.b_funny.model.RedditPost" />
+            type="com.bfunny.model.RedditPost" />
     </data>
 
     <!-- MaterialCardView had issues being the first child (no elevation), so I nested it in a LinearLayout per stack overflow advice. -->

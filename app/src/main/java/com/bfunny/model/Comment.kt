@@ -1,4 +1,4 @@
-package com.example.b_funny.model
+package com.bfunny.model
 
 data class Comment(
     var commentAuthor: String? = null,

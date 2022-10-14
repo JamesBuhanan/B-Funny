@@ -1,9 +1,9 @@
-package com.example.b_funny.model
+package com.bfunny.model
 
-import com.example.b_funny.api.redditposts.Children
-import com.example.b_funny.api.redditposts.ChildrenData
-import com.example.b_funny.api.redditposts.RedditPostsResponse
-import com.example.b_funny.api.redditposts.RedditPostsResponseData
+import com.bfunny.redditposts.Children
+import com.bfunny.redditposts.ChildrenData
+import com.bfunny.redditposts.RedditPostsResponse
+import com.bfunny.redditposts.RedditPostsResponseData
 
 fun RedditPostsResponse.toRedditPosts(): List<RedditPost> {
     return data.toRedditPosts()

@@ -1,4 +1,4 @@
-package com.example.b_funny.splash
+package com.bfunny.splash
 
 
 import android.annotation.SuppressLint
@@ -6,8 +6,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.example.b_funny.MainActivity
-import com.example.b_funny.databinding.ActivitySplashBinding
+import com.bfunny.MainActivity
+import com.bfunny.databinding.ActivitySplashBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

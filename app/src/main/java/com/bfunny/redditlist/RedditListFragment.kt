@@ -1,4 +1,4 @@
-package com.example.b_funny.redditlist
+package com.bfunny.redditlist
 
 import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.b_funny.R
-import com.example.b_funny.databinding.FragmentRedditListBinding
-import com.example.b_funny.model.RedditPost
+import com.bfunny.R
+import com.bfunny.databinding.FragmentRedditListBinding
+import com.bfunny.model.RedditPost
 
 const val SUBREDDIT_SHARED_PREFERENCES = "SUBREDDIT_SHARED_PREFERENCES"
 const val SUBREDDIT = "SUBREDDIT"

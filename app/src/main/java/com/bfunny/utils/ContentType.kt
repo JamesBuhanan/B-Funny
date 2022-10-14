@@ -1,4 +1,4 @@
-package com.example.b_funny.utils
+package com.bfunny.utils
 
 import java.net.URI
 import java.net.URISyntaxException

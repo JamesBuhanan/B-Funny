@@ -1,4 +1,4 @@
-package com.example.b_funny.detail
+package com.bfunny.detail
 
 import android.app.DownloadManager
 import android.content.Context.DOWNLOAD_SERVICE
@@ -13,8 +13,8 @@ import android.webkit.MimeTypeMap
 import android.webkit.URLUtil
 import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
-import com.example.b_funny.R
-import com.example.b_funny.databinding.FragmentDetailBinding
+import com.bfunny.R
+import com.bfunny.databinding.FragmentDetailBinding
 
 
 class DetailFragment : Fragment() {

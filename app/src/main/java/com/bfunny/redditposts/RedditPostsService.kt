@@ -1,4 +1,4 @@
-package com.example.b_funny.api.redditposts
+package com.bfunny.redditposts
 
 import retrofit2.http.GET
 import retrofit2.http.Path

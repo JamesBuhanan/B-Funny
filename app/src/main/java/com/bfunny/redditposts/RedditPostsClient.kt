@@ -1,6 +1,6 @@
-package com.example.b_funny.api.redditposts
+package com.bfunny.redditposts
 
-import com.example.b_funny.model.Comment
+import com.bfunny.model.Comment
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit

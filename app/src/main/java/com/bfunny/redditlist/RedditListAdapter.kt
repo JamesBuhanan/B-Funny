@@ -1,12 +1,12 @@
-package com.example.b_funny.redditlist
+package com.bfunny.redditlist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.b_funny.databinding.RedditListItemBinding
-import com.example.b_funny.model.RedditPost
+import com.bfunny.databinding.RedditListItemBinding
+import com.bfunny.model.RedditPost
 
 class OverviewAdapter(
     val onClickListener: (RedditPost) -> Unit,

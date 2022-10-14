@@ -1,9 +1,9 @@
-package com.example.b_funny.api.redditposts
+package com.bfunny.redditposts
 
-import com.example.b_funny.model.Comment
-import com.example.b_funny.model.RedditPost
-import com.example.b_funny.model.toRedditPosts
-import com.example.b_funny.utils.ContentType
+import com.bfunny.model.Comment
+import com.bfunny.model.RedditPost
+import com.bfunny.model.toRedditPosts
+import com.bfunny.utils.ContentType
 
 class RedditPostsRepository(
     private val redditPostsClient: RedditPostsClient,

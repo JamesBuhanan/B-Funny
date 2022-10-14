@@ -8,13 +8,13 @@
 
         <variable
             name="redditPost"
-            type="com.example.b_funny.model.RedditPost" />
+            type="com.bfunny.model.RedditPost" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".detail.DetailFragment">
+        tools:context="com.bfunny.detail.DetailFragment">
 
         <ImageView
             imageUrl="@{redditPost.url}"

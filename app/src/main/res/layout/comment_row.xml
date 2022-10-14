@@ -8,7 +8,7 @@
 
         <variable
             name="comment"
-            type="com.example.b_funny.model.Comment" />
+            type="com.bfunny.model.Comment" />
     </data>
 
     <LinearLayout

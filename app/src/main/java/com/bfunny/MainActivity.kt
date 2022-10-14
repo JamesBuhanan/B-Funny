@@ -1,10 +1,5 @@
-package com.example.b_funny
+package com.bfunny
 
-import android.app.DownloadManager
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -12,8 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.b_funny.databinding.ActivityMainBinding
-import com.example.b_funny.utils.sendNotification
+import com.bfunny.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

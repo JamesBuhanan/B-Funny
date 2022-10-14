@@ -1,4 +1,4 @@
-package com.example.b_funny.detailwithcomments
+package com.bfunny.detailwithcomments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.b_funny.databinding.FragmentDetailWithCommentsBinding
+import com.bfunny.databinding.FragmentDetailWithCommentsBinding
 
 
 class DetailWithCommentsFragment : Fragment() {
@@ -21,7 +21,9 @@ class DetailWithCommentsFragment : Fragment() {
     ): View {
         val binding = FragmentDetailWithCommentsBinding.inflate(inflater, container, false)
         val redditPost =
-            DetailWithCommentsFragmentArgs.fromBundle(requireArguments()).selectedRedditPost
+            DetailWithCommentsFragmentArgs.fromBundle(
+                requireArguments()
+            ).selectedRedditPost
         binding.commentsView.adapter = CommentsAdapter(redditPost.url)
         binding.redditPost = redditPost
         binding.viewModel = viewModel

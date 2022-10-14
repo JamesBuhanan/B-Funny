@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/RedditListFragment"
-        android:name="com.example.b_funny.redditlist.RedditListFragment"
+        android:name="com.bfunny.redditlist.RedditListFragment"
         android:label="@string/reddit_list_fragment_label"
         tools:layout="@layout/fragment_reddit_list">
         <action
@@ -19,18 +19,18 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.b_funny.detail.DetailFragment"
+        android:name="com.bfunny.detail.DetailFragment"
         tools:layout="@layout/fragment_detail">
         <argument
             android:name="selectedRedditPost"
-            app:argType="com.example.b_funny.model.RedditPost" />
+            app:argType="com.bfunny.model.RedditPost" />
     </fragment>
     <fragment
         android:id="@+id/detailWithCommentsFragment"
-        android:name="com.example.b_funny.detailwithcomments.DetailWithCommentsFragment">
+        android:name="com.bfunny.detailwithcomments.DetailWithCommentsFragment">
         <argument
             android:name="selectedRedditPost"
-            app:argType="com.example.b_funny.model.RedditPost" />
+            app:argType="com.bfunny.model.RedditPost" />
     </fragment>
 
 </navigation>

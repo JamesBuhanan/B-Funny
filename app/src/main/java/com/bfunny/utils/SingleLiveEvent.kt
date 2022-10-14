@@ -1,5 +1,5 @@
 
-package com.example.b_funny.utils
+package com.bfunny.utils
 
 import android.util.Log
 import androidx.annotation.MainThread

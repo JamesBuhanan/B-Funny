@@ -1,13 +1,13 @@
-package com.example.b_funny.redditlist
+package com.bfunny.redditlist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.b_funny.api.redditposts.RedditPostsClient
-import com.example.b_funny.api.redditposts.RedditPostsRepository
-import com.example.b_funny.model.RedditPost
-import com.example.b_funny.utils.SingleLiveEvent
+import com.bfunny.redditposts.RedditPostsClient
+import com.bfunny.redditposts.RedditPostsRepository
+import com.bfunny.model.RedditPost
+import com.bfunny.utils.SingleLiveEvent
 import kotlinx.coroutines.launch
 
 

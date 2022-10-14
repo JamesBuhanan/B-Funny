@@ -1,4 +1,4 @@
-package com.example.b_funny.detailwithcomments
+package com.bfunny.detailwithcomments
 
 import android.view.LayoutInflater
 import android.view.View.GONE
@@ -8,10 +8,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.b_funny.R
-import com.example.b_funny.databinding.CommentRowBinding
-import com.example.b_funny.databinding.HeaderRowBinding
-import com.example.b_funny.model.Comment
+import com.bfunny.R
+import com.bfunny.databinding.CommentRowBinding
+import com.bfunny.databinding.HeaderRowBinding
+import com.bfunny.model.Comment
 
 private const val TYPE_HEADER = 0
 private const val TYPE_COMMENT = 1

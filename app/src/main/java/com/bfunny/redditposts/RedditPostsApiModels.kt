@@ -1,4 +1,4 @@
-package com.example.b_funny.api.redditposts
+package com.bfunny.redditposts
 
 
 data class RedditPostsResponse(val data: RedditPostsResponseData)
